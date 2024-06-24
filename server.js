@@ -3,7 +3,7 @@ var app = express();
 var fs = require("fs");
 const path = require("path");
 
-const data = fs.readFileSync(path.resolve(__dirname, "./Static_Response.json"), 'utf8');
+const data = fs.readFileSync('./Static_Response.json');
 
 app.get('/AmssRestServices/subscriber/getMSPDiscounts', function (req, res) {
     
