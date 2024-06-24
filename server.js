@@ -21,7 +21,7 @@ app.get('*', (req, res) => {
 });
 
 // Listen and serve.
-const PORT = process.env.PORT || 16001;
+const PORT = 16001;
 server.listen(PORT, () => {
   console.log(`App started on PORT ${PORT}`);
 });
