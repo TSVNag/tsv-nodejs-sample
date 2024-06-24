@@ -1,0 +1,15 @@
+{"ImplGetMSPDiscountsRestOutput": {
+   "baseOutput": {"discountInfo": [   {
+      "discCode": "Server1",
+      "discStartDate": "2022-04-19T00:00:00.000-0400",
+      "discEndDate": "2024-04-18T00:00:00.000-0400",
+      "discDescription": "$6 off BM - 24 months",
+      "discAmount": 6,
+      "discAltDescription": "La $6 off BM - 24 months"
+   }]},
+   "responseInfo":    {
+      "serverTS": "2022-05-03T21:27:22.943-0400",
+      "code": "0000000000",
+      "messageId": "amssInternal_Machine id_2748080"
+   }
+}}
