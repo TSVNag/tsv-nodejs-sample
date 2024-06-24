@@ -1,27 +1,24 @@
-const express = require('express');
-const http = require('http');
+var express = require('express');
+var app = express();
+var fs = require("fs");
+const path = require("path");
 
-const app = express();
-const server = http.createServer(app)
+const data = fs.readFileSync(path.resolve(__dirname, "./Static_Response.json"), 'utf8');
+
+app.get('/AmssRestServices/subscriber/getMSPDiscounts', function (req, res) {
+    
+		res.setHeader('Connection', 'close');
+        res.setHeader('Content-Type', 'application/json');
+        res.end(data);
+})
 
 
-app.get('/ready', (req, res) => res.status(200).json({status:"ok"}));
-app.get('/live', (req, res) => res.status(200).json({status:"ok"}));
-
-
-
-
-app.get('/', (req, res) => {
-  
-  res.send('Hello from TSV Node.js Starter Application!');
-});
-
-app.get('*', (req, res) => {
-  res.status(404).send("Not Found");
-});
-
-// Listen and serve.
-const PORT = 16001;
-server.listen(PORT, () => {
-  console.log(`App started on PORT ${PORT}`);
-});
+var server = app.listen(8090, function () {
+    var env = " BPI - India";
+    console.log("___"+env+"___");
+    env = env.trim();
+    console.log("___" + env + "___");
+    var host = server.address().address
+    var port = server.address().port
+    console.log("AMSS_REST_STATIC apis listening at http://%s:%s", host, port)
+})
