@@ -17,7 +17,7 @@ spec:
           image: nodejs-image:latest
           ports:
             - name: http
-              containerPort: 3001
+              containerPort: 16001
               protocol: TCP
           resources:
             requests:
@@ -30,9 +30,9 @@ metadata:
   name: tsv-nodejs-svc
 spec:
   ports:
-    - name: http-3001
-      port: 3001
+    - name: http-16001
+      port: 16001
       protocol: TCP
-      targetPort: 3001
+      targetPort: 16001
   selector:
     app: nodejs-app
